@@ -1,0 +1,129 @@
+    <!-- <button type="button" name="button" id="clickMe">search</button> -->
+
+<!DOCTYPE html>
+<html>
+
+{% load static %}
+<!-- Head -->
+
+<head>
+
+	<title></title>
+
+	<!-- Meta-Tags -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="keywords" content="Library Member Login Form Widget Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+        <script src="{% static 'css/book.js' %}"></script>
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<!-- Style --> <link rel="stylesheet" href="{% static 'css/book.css' %}" type="text/css" media="all">
+
+	<!-- Fonts -->
+		<link href="//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+	<!-- //Fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<!-- //Head -->
+
+<!-- Body -->
+
+<style>
+    a:hover {
+  color:black;
+}
+</style>
+<body>
+
+
+      <!-- Header Content -->
+      <header id="header" class="page-header">
+        <div class="page-header row">
+          <!-- Logo -->
+          <div class="col-md-4">
+            <a href="#" style="color:#d9b38c" class="logo">LIBRARIAN <span><i class="fa-sharp fa-solid fa-book-open fa-lg" style="color: #ffffff;"></i> </span></a>
+          </div>
+
+
+<!--          <div class="col-md-4 col-md-offset-4">-->
+<!--            &lt;!&ndash; Search &ndash;&gt;-->
+<!--            <div class="catalog-search">-->
+<!--              <input class="shuffle-search input_field " type="search" autocomplete="off" value="" maxlength="128" placeholder="Search Book" id="input-search"/>-->
+<!--              <button type="button" name="button"  id='clickMe'><i class="fa-solid fa-magnifying-glass"></i></button>-->
+
+
+<!--            </div>-->
+
+</div>
+
+            <div  style="margin-left:1400px; margin-bottom:5px; padding-bottom:0px; ">
+                  <a class="b" style="text-decoration:none; color:white" data-toggle="tooltip" data-placement="top" title="History" href="historylibrarian" ><i class="fa-regular fa-clock fa-lg" style="color: #ffffff;"></i></a>&nbsp &nbsp
+
+                  <a class="b" style="color:white;  text-decoration:none" data-toggle="tooltip" data-placement="top" title="signout" href="signout" ><i class="fa-sharp fa-solid fa-right-from-bracket fa-lg"></i></a>
+
+          </div>
+        </div>
+      </header>
+
+
+
+      <!-- Main content -->
+
+<div class="container">
+ <br><br><br>
+  <input class="form-control" id="myInput" type="text" placeholder="Search Book by Name , Author or Genre" style="width:300px; margin-left:999px">
+    <br>
+
+     <ul class="main-nav" style="background-color:whitesmoke;width:110px;height:40px;padding-left:19px;margin-bottom:20px;margin-left:1165px;border-radius:18px;padding-top:6px;">
+         <a style="text-decoration:none" href="addbook" >Add Book</a>
+      </ul>
+  <table class="table table-bordered" style="text-align:center;">
+    <thead>
+      <tr>
+
+        <th>Book</th>
+        <th>Author</th>
+        <th>Genre</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+    {% for i in data %}
+      <tr>
+        <td>{{i.book_name}}</td>
+        <td>{{i.author}}</td>
+        <td>{{i.genre}}</td>
+        <td><a href="editbook/{{ i.id }}" style="color:black"><i class="fa-solid fa-pen"></i></a>&nbsp&nbsp&nbsp<a href="deletebook/{{ i.id }}" style="color:red"><i class="fa-regular fa-trash-can"></i></a></td>
+      </tr>
+    {% endfor %}
+
+    </tbody>
+  </table>
+
+</div>
+
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+</body>
+    </html>
