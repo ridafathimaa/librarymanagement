@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from app1 import views
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,19 +28,20 @@ urlpatterns = [
     path('signin',views.signin),
     path('signout',views.signout),
     path('bookstore',views.bookstore),
+    path('getbook',views.getbook),
     path('changepasswordview',views.changepasswordview),
     path('changepassword',views.changepassword),
     path('librarian',views.librarian,name='librarian'),
     path('addbook',views.addbook),
-    path('librarianlogin',views.librarianlogin),
     path('editbook/<int:id>',views.editbook ,name='editbook'),
     path('deletebook/<int:id>',views.deletebook),
     path('editprofileview',views.editprofileview),
     path('editprofile',views.editprofile),
     path('historyuser',views.historyuser),
+    path('returnbook/<int:id>',views.returnbook,name='returnbook'),
     path('historylibrarian',views.historylibrarian),
     path('logout',views.logout)
 
-
-
 ]
+if settings.DEBUG:
+    urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

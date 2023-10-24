@@ -66,7 +66,7 @@
                   <a class="b" style="color:white;  text-decoration:none" data-toggle="tooltip" data-placement="top" title="signout" href="signout" ><i class="fa-sharp fa-solid fa-right-from-bracket fa-lg"></i></a>
 
           </div>
-        </div>
+
       </header>
 
 
@@ -74,12 +74,12 @@
       <!-- Main content -->
 
 <div class="container">
- <br><br><br>
+ <br><br><br><br><br><br>
   <input class="form-control" id="myInput" type="text" placeholder="Search Book by Name , Author or Genre" style="width:300px; margin-left:999px">
     <br>
 
      <ul class="main-nav" style="background-color:whitesmoke;width:110px;height:40px;padding-left:19px;margin-bottom:20px;margin-left:1165px;border-radius:18px;padding-top:6px;">
-         <a style="text-decoration:none" href="addbook" >Add Book</a>
+         <a href="addbook" style="text-decoration:none"  >Add Book</a>
       </ul>
   <table class="table table-bordered" style="text-align:center;">
     <thead>
@@ -94,10 +94,10 @@
     <tbody id="myTable">
     {% for i in data %}
       <tr>
-        <td>{{i.book_name}}</td>
+        <td><img src="{{i.image.url}}" style="width:100px;height:130;"><br> {{i.book_name}}</td>
         <td>{{i.author}}</td>
         <td>{{i.genre}}</td>
-        <td><a href="editbook/{{ i.id }}" style="color:black"><i class="fa-solid fa-pen"></i></a>&nbsp&nbsp&nbsp<a href="deletebook/{{ i.id }}" style="color:red"><i class="fa-regular fa-trash-can"></i></a></td>
+        <td><a href="editbook/{{ i.id }}" style="color:#fffff"><i class="fa-solid fa-pen"></i></a>&nbsp&nbsp&nbsp<a href="deletebook/{{ i.id }}" style="color:red"><i class="fa-regular fa-trash-can"></i></a></td>
       </tr>
     {% endfor %}
 

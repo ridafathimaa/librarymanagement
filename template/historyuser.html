@@ -45,7 +45,7 @@
         <div class="page-header row">
           <!-- Logo -->
           <div class="col-md-4">
-            <a href="#" style=color:#d9b38c" class="logo">THE <span>BOOKSTORE </span></a>
+            <a href="bookstore" style=color:#d9b38c" class="logo">THE <span>BOOKSTORE </span></a>
           </div>
 
 
@@ -80,27 +80,34 @@
 <!--     <ul class="main-nav" style="background-color:whitesmoke;width:110px;height:40px;padding-left:19px;margin-bottom:20px;margin-left:1165px;border-radius:18px;padding-top:6px;">-->
 <!--         <a style="text-decoration:none" href="addbook" >Add Book</a>-->
 <!--      </ul>-->
-      <center><h1>User History</h1></center>
+
       <br> <a href="bookstore" style="color:black;margin-left:1450px">Go Back</a>
-  <table class="table table-bordered" style="text-align:center;">
+      <br><br><br><br>
+      <center><h1>User History</h1></center>
+  <table class="table table-bordered" style="text-align:center;" >
     <thead>
       <tr>
 
         <th>Book</th>
+        <th>Rented on</th>
         <th>Return</th>
 
 
       </tr>
     </thead>
     <tbody id="myTable">
-
+        {% for i in data %}
       <tr>
-        <td></td>
-        <td><a style=" background-color: #d9b38c;" class="btn" href="#" role="button">Return</a></td>
+        <td>{{i.book_name}}</td>
+        <td>{{i.issue_date}}</td>
+          <form action="returnbook/{{i.id}}" method="post">
+              {% csrf_token %}
+        <td><button type="submit" href="returnbook" style=" background-color: #d9b38c;" class="btn"  role="button">Return</button></td>
+          </form>
 
 
       </tr>
-
+    {% endfor %}
 
     </tbody>
   </table>

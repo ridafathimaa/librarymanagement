@@ -35,6 +35,8 @@
 <body>
 <style>
 
+
+
         .bg-glass {
       background-color: hsla(0, 0%, 100%, 0.9) !important;
       backdrop-filter: saturate(200%) blur(25px);
@@ -52,7 +54,7 @@
         <div class="page-header row">
           <!-- Logo -->
           <div class="col-md-4">
-<a href="#" class="logo">LIBRARIAN <span><i class="fa-sharp fa-solid fa-book-open fa-lg" style="color: #ffffff;"></i> </span></a>
+<a href="#" style="color:#d9b38c" class="logo">LIBRARIAN <span><i class="fa-sharp fa-solid fa-book-open fa-lg" style="color: #ffffff;"></i> </span></a>
           </div>
 
 
@@ -81,7 +83,7 @@
 
 <div class="card bg-glass">
           <div class="card-body px-4 py-5 px-md-5">
-            <form action="addbook" method="post">
+            <form action="addbook" method="post" enctype="multipart/form-data">
               {% csrf_token %}
 
 
@@ -103,6 +105,12 @@
                 <div class="form-outline mb-4">
                 <input type="text" id="form3Example6" name="Genre" class="form-control" />
                 <label class="form-label" for="form3Example4"> Genre</label>
+              </div>
+
+
+                <div class="form-outline mb-4">
+                <input type="file" id="form3Example9" name="Image" class="form-control" />
+                <label class="form-label" for="form3Example4"></label>
               </div>
 
  <br>

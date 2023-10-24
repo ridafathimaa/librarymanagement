@@ -23,7 +23,7 @@ body {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-   overflow: hidden;
+     height:auto;
   text-align: center;
   margin-top: 0;
   overflow-x:hidden;
@@ -37,12 +37,19 @@ header {
   margin: 0 auto;
   height: (100% - 100px);
   background-color: black;
-  padding: 20px 0;
+  padding: 40px 0;
+
+
+
 }
 
 .page-header {
   margin: 0;
   border-bottom: none;
+  overflow:hidden;
+  position:fixed;
+  top:0;
+  width:100%;
 
 }
 
@@ -122,8 +129,7 @@ button {
 }
 button:hover {
   background-color: white;
-  width:30px;
-  height:30px;
+
 }
 .b:hover{
 background-color:#d9b38c;
@@ -243,3 +249,18 @@ h3 {
   margin-right: 15px;
   text-align: right;
 }
+.book{
+   transition: transform .2s;
+   }
+
+.book:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.07);
+}
+
+img{
+border-radius:9px;
+}
+
+

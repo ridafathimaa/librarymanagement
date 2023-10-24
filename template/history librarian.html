@@ -45,7 +45,7 @@
         <div class="page-header row">
           <!-- Logo -->
           <div class="col-md-4">
-            <a href="#" style="color:#d9b38c" class="logo">LIBRARIAN <span><i class="fa-sharp fa-solid fa-book-open fa-lg" style="color: #ffffff;"></i> </span></a>
+            <a href="librarian" style="color:#d9b38c" class="logo">LIBRARIAN <span><i class="fa-sharp fa-solid fa-book-open fa-lg" style="color: #ffffff;"></i> </span></a>
           </div>
 
 
@@ -93,13 +93,14 @@
       </tr>
     </thead>
     <tbody id="myTable">
-
+{% for i in data %}
       <tr>
-        <td></td>
-        <td></td>
+        <td>{{i.book_name}}</td>
+        <td>{{i.username}}</td>
 
 <!--        <td><i class="fa-solid fa-pen">&nbsp&nbsp&nbsp<i class="fa-regular fa-trash-can"></i></i></td>-->
       </tr>
+{% endfor %}
 
 <!--      <tr>-->
 <!--        <td>Life of Pi</td>-->

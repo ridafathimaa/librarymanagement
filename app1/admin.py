@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Signup,Login,Book
+from .models import Signup,Book,Issue
 
 # Register your models here.
 admin.site.register(Signup)
-admin.site.register(Login)
 admin.site.register(Book)
+admin.site.register(Issue)

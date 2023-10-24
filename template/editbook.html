@@ -81,7 +81,7 @@
 
 <div class="card bg-glass">
           <div class="card-body px-4 py-5 px-md-5">
-            <form action="{% url 'editbook' id=data.id %}" method="post">
+            <form action="{% url 'editbook' id=data.id %}" method="post" >
               {% csrf_token %}
 
 
@@ -103,6 +103,11 @@
                 <div class="form-outline mb-4">
                 <input type="text" id="form3Example6" value="{{data.genre}}" name="New_Genre" class="form-control" />
                 <label class="form-label" for="form3Example4">New Genre</label>
+              </div>
+
+                <div class="form-outline mb-4">
+                <input type="file" id="form3Example62" value="{{data.image}}" name="New_Image" class="form-control" required="" />
+                <label class="form-label" for="form3Example4"></label>
               </div>
 
  <br>
